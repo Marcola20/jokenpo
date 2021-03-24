@@ -1,6 +1,5 @@
 #Jokenpô desenvolvido por Marcos Vinicius
 #versão 2.1
-#adicionado continue que havia faltado na primeira versão.
 
 from time import sleep
 from random import randint
