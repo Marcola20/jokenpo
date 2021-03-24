@@ -11,12 +11,12 @@ print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
 print('''Olá, iremos jogar Jokênpo.
 Quem fizer três pontos primeiro vence!''')
 print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
-sleep(2)
+sleep(1)
 
 jog = 0
 pc = 0
 while (jog < 3 and pc < 3):
-    print('''-=-=-=- JOKENPÔ -=-=-=-
+    print('''\n-=-=-=- JOKENPÔ -=-=-=-
     [0] Pedra
     [1] Papel
     [2] Tesoura''')
@@ -24,7 +24,7 @@ while (jog < 3 and pc < 3):
     j = int(input('Qual é sua jogada? '))
     print('-=-=-=-=-=-=-=-=-=-=-=-')
     print('O computador jogou {}'.format(itens[cpu]))
-    print('O jogador jogou {}'.format(itens[j]))
+    print('O jogador jogou ', j)
     print('-=-=-=-=-=-=-=-=-=-=-=-')
 
     if cpu == 0: #Pedra
@@ -39,9 +39,12 @@ while (jog < 3 and pc < 3):
             print('COMPUTADOR VENCEU!!!')
             pc += 1
             print('-=-=-=-=-=-=-=-=-=-=-=-')
-        else:
+        elif j >= 3:
             print('JOGADA INVÁLIDA!')
-        sleep(2)
+            print('-=-=-=-=-=-=-=-=-=-=-=-')
+            continue
+            print('\n')
+        sleep(1)
 
     elif cpu == 1: #Papel
         if j == 0:  #Pedra
@@ -55,9 +58,12 @@ while (jog < 3 and pc < 3):
             print('JOGADOR VENCEU!!')
             jog += 1
             print('-=-=-=-=-=-=-=-=-=-=-=-')
-        else:
+        elif j >= 3:
             print('JOGADA INVÁLIDA!')
-        sleep(2)
+            print('-=-=-=-=-=-=-=-=-=-=-=-')
+            print('\n')
+            continue
+        sleep(1)
 
     elif cpu == 2: #Tesoura
         if j == 0:  #Pedra
@@ -71,9 +77,12 @@ while (jog < 3 and pc < 3):
         elif j == 2:  #Tesoura
             print('Empate!')
             print('-=-=-=-=-=-=-=-=-=-=-=-')
-        else:
+        elif j >= 3:
             print('JOGADA INVÁLIDA!')
-        sleep(2)
+            print('-=-=-=-=-=-=-=-=-=-=-=-')
+            print('\n')
+            continue
+        sleep(1)
 
 if jog == 3:
     print('PARABÉNS. Você venceu o Computador!')
