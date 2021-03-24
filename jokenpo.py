@@ -1,11 +1,11 @@
 #Jokenpô desenvolvido por Marcos Vinicius
-#versão 2.0
+#versão 2.1
 #adicionado continue que havia faltado na primeira versão.
 
 from time import sleep
 from random import randint
 
-itens = ('Pedra', 'Papel', 'Tesoura', 'Nada', 'Nada', 'Nada')
+itens = ('Pedra', 'Papel', 'Tesoura', 'NADA', 'NADA', 'NADA')
 cpu = randint(0, 2)
 
 print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
@@ -17,14 +17,20 @@ sleep(1)
 jog = 0
 pc = 0
 while (jog < 3 and pc < 3):
-    print('\n')
-    print('''-=-=-=- JOKENPÔ -=-=-=-
+    print('''\n-=-=-=- JOKENPÔ -=-=-=-
     [0] Pedra
     [1] Papel
     [2] Tesoura''')
     print('-=-=-=-=-=-=-=-=-=-=-=-')
     j = int(input('Qual é sua jogada? '))
     print('-=-=-=-=-=-=-=-=-=-=-=-')
+    sleep(1)
+    print('         JO')
+    sleep(1)
+    print('        KEEN')
+    sleep(1)
+    print('         PÔ')
+    sleep(1)
     print('O computador jogou {}'.format(itens[cpu]))
     print('O jogador jogou {}'.format(itens[j]))
     print('-=-=-=-=-=-=-=-=-=-=-=-')
@@ -34,14 +40,16 @@ while (jog < 3 and pc < 3):
             print('Empate!')
             print('-=-=-=-=-=-=-=-=-=-=-=-')
         elif j == 1: #Papel
-            print('JOGADOR VENCEU!!')
+            print(''' PAPEL EMBRULHA PEDRA!
+ JOGADOR VENCEU!!''''')
             jog += 1
             print('-=-=-=-=-=-=-=-=-=-=-=-')
         elif j == 2: #Tesoura
-            print('COMPUTADOR VENCEU!!!')
+            print(''' PEDRA QUEBRA TESOURA! 
+ COMPUTADOR VENCEU!!''')
             pc += 1
             print('-=-=-=-=-=-=-=-=-=-=-=-')
-        elif j >= 3:
+        elif j > 2:
             print('JOGADA INVÁLIDA!')
             print('-=-=-=-=-=-=-=-=-=-=-=-')
             continue
@@ -50,17 +58,19 @@ while (jog < 3 and pc < 3):
 
     elif cpu == 1: #Papel
         if j == 0:  #Pedra
-            print('COMPUTADOR VENCEU!!')
+            print(''' PAPEL EMBRULHA PEDRA!
+ COMPUTADOR VENCEU!!''')
             pc += 1
             print('-=-=-=-=-=-=-=-=-=-=-=-')
         elif j == 1:  #Papel
             print('Empate!')
             print('-=-=-=-=-=-=-=-=-=-=-=-')
         elif j == 2:  #Tesoura
-            print('JOGADOR VENCEU!!')
+            print(''' TESOURA CORTA PAPEL!
+ JOGADOR VENCEU!!''')
             jog += 1
             print('-=-=-=-=-=-=-=-=-=-=-=-')
-        elif j >= 3:
+        elif j > 2:
             print('JOGADA INVÁLIDA!')
             print('-=-=-=-=-=-=-=-=-=-=-=-')
             print('\n')
@@ -69,17 +79,19 @@ while (jog < 3 and pc < 3):
 
     elif cpu == 2: #Tesoura
         if j == 0:  #Pedra
-            print('JOGADOR VENCEU!!')
+            print(''' PEDRA QUEBRA TESOURA! 
+ JOGADOR VENCEU!!''')
             jog += 1
             print('-=-=-=-=-=-=-=-=-=-=-=-')
         elif j == 1:  #Papel
-            print('COMPUTADOR VENCEU!!')
+            print(''' TESOURA CORTA PAPEL!
+ COMPUTADOR VENCEU!!''')
             pc += 1
             print('-=-=-=-=-=-=-=-=-=-=-=-')
         elif j == 2:  #Tesoura
             print('Empate!')
             print('-=-=-=-=-=-=-=-=-=-=-=-')
-        elif j >= 3:
+        elif j > 2:
             print('JOGADA INVÁLIDA!')
             print('-=-=-=-=-=-=-=-=-=-=-=-')
             print('\n')
