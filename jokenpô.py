@@ -4,7 +4,7 @@
 from time import sleep
 from random import randint
 
-itens = ('Pedra', 'Papel', 'Tesoura')
+itens = ('Pedra', 'Papel', 'Tesoura', 'Nada', 'Nada', 'Nada')
 cpu = randint(0, 2)
 
 print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
@@ -16,7 +16,8 @@ sleep(1)
 jog = 0
 pc = 0
 while (jog < 3 and pc < 3):
-    print('''\n-=-=-=- JOKENPÔ -=-=-=-
+    print('\n')
+    print('''-=-=-=- JOKENPÔ -=-=-=-
     [0] Pedra
     [1] Papel
     [2] Tesoura''')
@@ -24,7 +25,7 @@ while (jog < 3 and pc < 3):
     j = int(input('Qual é sua jogada? '))
     print('-=-=-=-=-=-=-=-=-=-=-=-')
     print('O computador jogou {}'.format(itens[cpu]))
-    print('O jogador jogou ', j)
+    print('O jogador jogou {}'.format(itens[j]))
     print('-=-=-=-=-=-=-=-=-=-=-=-')
 
     if cpu == 0: #Pedra
